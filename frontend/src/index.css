@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory-50 text-ink-900 font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-jungle-950;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-jungle-700 ring-offset-2 ring-offset-ivory-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-jungle-700 px-6 py-3 text-sm font-semibold text-ivory-50 transition-colors hover:bg-jungle-900 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-jungle-700 bg-transparent px-6 py-3 text-sm font-semibold text-jungle-900 transition-colors hover:bg-jungle-700 hover:text-ivory-50;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-sand-400 px-6 py-3 text-sm font-semibold text-jungle-950 transition-colors hover:bg-sand-300;
+  }
+  .input {
+    @apply w-full rounded-2xl border border-jungle-950/10 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-700/50 focus:border-jungle-700;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-ink-900;
+  }
+  .card {
+    @apply rounded-3xl bg-white shadow-soft;
+  }
+}
+
+@layer utilities {
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.34s; }
+  .delay-4 { animation-delay: 0.46s; }
+  .delay-5 { animation-delay: 0.58s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
